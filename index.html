@@ -1,197 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="dark">
-<title>Amogh Yalameli | Full-Stack Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
-<style>
-:root{--bg:#12161d;--surface:#1a2029;--line:#2a3340;--fg:#e8edf4;--muted:#9aa6b6;--blue:#3d8bff;--blue-soft:rgba(61,139,255,.14);
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*{box-sizing:border-box}
-html{scroll-padding-top:70px;scroll-behavior:smooth;height:auto}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.7 Inter,system-ui,sans-serif}
-a{color:inherit}
-.wrap{max-width:960px;margin:0 auto;padding:0 22px}
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(18,22,29,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
-.logo{font:700 18px 'Space Grotesk',sans-serif;text-decoration:none}
-.top nav{display:flex;gap:20px;font-size:15px}
-.top nav a{color:var(--muted);text-decoration:none}
-.top nav a:hover,.top nav a:focus-visible{color:var(--blue)}
-.hero{padding:96px 0 80px;position:relative}
-.hero::before{content:"";position:absolute;left:-120px;top:20px;width:420px;height:420px;background:radial-gradient(circle,rgba(61,139,255,.22),transparent 65%);pointer-events:none}
-h1{font:700 clamp(38px,8vw,68px)/1.05 'Space Grotesk',sans-serif;margin:0 0 16px;position:relative}
-.tag{font:500 clamp(18px,3vw,22px) 'Space Grotesk',sans-serif;color:var(--blue);margin:0 0 20px;position:relative}
-.hero p.intro{color:var(--muted);max-width:56ch;font-size:18px;margin:0 0 32px;position:relative}
-.btns{display:flex;flex-wrap:wrap;gap:14px;position:relative}
-.btn{padding:13px 24px;border-radius:10px;font-weight:500;text-decoration:none;border:1px solid var(--blue);transition:background .2s,box-shadow .2s}
-.btn.primary{background:var(--blue);color:#07101f}
-.btn.primary:hover{box-shadow:0 0 22px rgba(61,139,255,.55)}
-.btn.ghost:hover{background:var(--blue-soft)}
-.btn:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-section{padding:64px 0;border-top:1px solid var(--line)}
-h2{font:700 30px 'Space Grotesk',sans-serif;margin:0 0 24px}
-.about p{max-width:64ch;color:var(--muted);font-size:17px;margin:0 0 14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .2s,transform .2s}
-.card:hover{border-color:var(--blue);transform:translateY(-3px)}
-.card h3{font:700 18px 'Space Grotesk',sans-serif;margin:0 0 14px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-.tags li{font-size:13px;padding:4px 11px;border-radius:999px;background:var(--blue-soft);color:#b9d4ff}
-.proj{display:flex;flex-direction:column;gap:12px}
-.proj h3{margin:0}
-.proj p{margin:0;color:var(--muted);font-size:15px}
-.proj .tags{margin-top:auto}
-.proj a{color:var(--blue);font-size:15px;text-decoration:none}
-.proj a:hover{text-decoration:underline}
-.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:36px}
-@media(max-width:700px){.contact{grid-template-columns:1fr}.top nav{gap:14px}}
-label{display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
-input,textarea{width:100%;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;margin-bottom:16px}
-textarea{min-height:130px;resize:vertical}
-button{cursor:pointer;font:500 16px Inter,sans-serif}
-.btn.primary{cursor:pointer}
-.links{list-style:none;padding:0;margin:0;display:grid;gap:14px}
-.links span{display:block;font-size:14px;color:var(--muted)}
-.links a{text-decoration:none;color:var(--fg)}
-.links a:hover{color:var(--blue)}
-.note{font-size:14px;margin-top:10px;min-height:22px;transition:all .2s ease}
-.note.success{color:#4ade80}
-.note.error{color:#f87171}
-.note.loading{color:var(--blue)}
-button:disabled{opacity:0.6;cursor:not-allowed}
-footer{border-top:1px solid var(--line);padding:28px 0 44px;color:var(--muted);font-size:14px;text-align:center}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <title>Amogh Yalameli | Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap">
+    <style>
+        :root {
+            --bg: #12161d;
+            --surface: #1a2029;
+            --line: #2a3340;
+            --fg: #e8edf4;
+            --muted: #9aa6b6;
+            --blue: #3d8bff;
+            --blue-soft: rgba(61, 139, 255, .14);
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-padding-top: 70px;
+            scroll-behavior: smooth;
+            height: auto
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font: 400 16px/1.7 Inter, system-ui, sans-serif
+        }
+
+        a {
+            color: inherit
+        }
+
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 22px
+        }
+
+        .top {
+            position: sticky;
+            top: env(safe-area-inset-top, 0px);
+            z-index: 5;
+            background: rgba(18, 22, 29, .85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .top .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 58px
+        }
+
+        .logo {
+            font: 700 18px 'Space Grotesk', sans-serif;
+            text-decoration: none
+        }
+
+        .top nav {
+            display: flex;
+            gap: 20px;
+            font-size: 15px
+        }
+
+        .top nav a {
+            color: var(--muted);
+            text-decoration: none
+        }
+
+        .top nav a:hover,
+        .top nav a:focus-visible {
+            color: var(--blue)
+        }
+
+        .hero {
+            padding: 96px 0 80px;
+            position: relative
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            left: -120px;
+            top: 20px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(61, 139, 255, .22), transparent 65%);
+            pointer-events: none
+        }
+
+        h1 {
+            font: 700 clamp(38px, 8vw, 68px)/1.05 'Space Grotesk', sans-serif;
+            margin: 0 0 16px;
+            position: relative
+        }
+
+        .tag {
+            font: 500 clamp(18px, 3vw, 22px) 'Space Grotesk', sans-serif;
+            color: var(--blue);
+            margin: 0 0 20px;
+            position: relative
+        }
+
+        .hero p.intro {
+            color: var(--muted);
+            max-width: 56ch;
+            font-size: 18px;
+            margin: 0 0 32px;
+            position: relative
+        }
+
+        .btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            position: relative
+        }
+
+        .btn {
+            padding: 13px 24px;
+            border-radius: 10px;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid var(--blue);
+            transition: background .2s, box-shadow .2s
+        }
+
+        .btn.primary {
+            background: var(--blue);
+            color: #07101f
+        }
+
+        .btn.primary:hover {
+            box-shadow: 0 0 22px rgba(61, 139, 255, .55)
+        }
+
+        .btn.ghost:hover {
+            background: var(--blue-soft)
+        }
+
+        .btn:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px
+        }
+
+        section {
+            padding: 64px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        h2 {
+            font: 700 30px 'Space Grotesk', sans-serif;
+            margin: 0 0 24px
+        }
+
+        .about p {
+            max-width: 64ch;
+            color: var(--muted);
+            font-size: 17px;
+            margin: 0 0 14px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 22px;
+            transition: border-color .2s, transform .2s
+        }
+
+        .card:hover {
+            border-color: var(--blue);
+            transform: translateY(-3px)
+        }
+
+        .card h3 {
+            font: 700 18px 'Space Grotesk', sans-serif;
+            margin: 0 0 14px
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        .tags li {
+            font-size: 13px;
+            padding: 4px 11px;
+            border-radius: 999px;
+            background: var(--blue-soft);
+            color: #b9d4ff
+        }
+
+        .proj {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .proj h3 {
+            margin: 0
+        }
+
+        .proj p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        .proj .tags {
+            margin-top: auto
+        }
+
+        .proj a {
+            color: var(--blue);
+            font-size: 15px;
+            text-decoration: none
+        }
+
+        .proj a:hover {
+            text-decoration: underline
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 36px
+        }
+
+        @media(max-width:700px) {
+            .contact {
+                grid-template-columns: 1fr
+            }
+
+            .top nav {
+                gap: 14px
+            }
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 6px
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            background: var(--surface);
+            color: var(--fg);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 12px 14px;
+            font: inherit;
+            margin-bottom: 16px
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical
+        }
+
+        button {
+            cursor: pointer;
+            font: 500 16px Inter, sans-serif
+        }
+
+        .btn.primary {
+            cursor: pointer
+        }
+
+        .links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px
+        }
+
+        .links span {
+            display: block;
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        .links a {
+            text-decoration: none;
+            color: var(--fg)
+        }
+
+        .links a:hover {
+            color: var(--blue)
+        }
+
+        .note {
+            font-size: 14px;
+            margin-top: 10px;
+            min-height: 22px;
+            transition: all .2s ease
+        }
+
+        .note.success {
+            color: #4ade80
+        }
+
+        .note.error {
+            color: #f87171
+        }
+
+        .note.loading {
+            color: var(--blue)
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 28px 0 44px;
+            color: var(--muted);
+            font-size: 14px;
+            text-align: center
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                transition: none !important;
+                scroll-behavior: auto !important
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="top"><div class="wrap"><a class="logo" href="#top">AY</a>
-<nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav></div></div>
+    <div class="top">
+        <div class="wrap"><a class="logo" href="#top">AY</a>
+            <nav><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a
+                    href="#contact">Contact</a></nav>
+        </div>
+    </div>
 
-<main id="top" class="wrap">
-<div class="hero">
-<h1>Hi, I'm Amogh Yalameli</h1>
-<p class="tag">Full-Stack Developer &amp; AI/ML Engineering Student</p>
-<p class="intro">I build smart web and mobile applications that are fast to use, solid under the hood, and powered by AI where it actually helps.</p>
-<div class="btns"><a class="btn primary" href="#projects">View Projects</a><a class="btn ghost" href="#contact">Get in Touch</a></div>
-</div>
+    <main id="top" class="wrap">
+        <div class="hero">
+            <h1>Hi, I'm Amogh Yalameli</h1>
+            <p class="tag">Full-Stack Developer &amp; AI/ML Engineering Student</p>
+            <p class="intro">I build smart web and mobile applications that are fast to use, solid under the hood, and
+                powered by AI where it actually helps.</p>
+            <div class="btns"><a class="btn primary" href="#projects">View Projects</a><a class="btn ghost"
+                    href="#contact">Get in Touch</a></div>
+        </div>
 
-<section id="about" class="about">
-<h2>About me</h2>
-<p>I'm an AI/ML engineering student who loves software engineering. I enjoy taking an idea from database schema to polished interface, using React, Node.js and TypeScript.</p>
-<p>I'm especially interested in AI and machine learning architectures: retrieval pipelines, vector databases and agentic systems that make applications more useful and more capable.</p>
-</section>
+        <section id="about" class="about">
+            <h2>About me</h2>
+            <p>I'm an AI/ML engineering student who loves software engineering. I enjoy taking an idea from database
+                schema to polished interface, using React, Node.js and TypeScript.</p>
+            <p>I'm especially interested in AI and machine learning architectures: retrieval pipelines, vector databases
+                and agentic systems that make applications more useful and more capable.</p>
+        </section>
 
-<section id="skills">
-<h2>Skills &amp; tech stack</h2>
-<div class="grid">
-<div class="card"><h3>Frontend</h3><ul class="tags"><li>React</li><li>Vite</li><li>Tailwind CSS</li><li>TypeScript</li></ul></div>
-<div class="card"><h3>Backend &amp; Databases</h3><ul class="tags"><li>Node.js</li><li>Express.js</li><li>Prisma</li><li>PostgreSQL</li><li>SQLite</li><li>MongoDB</li></ul></div>
-<div class="card"><h3>Mobile &amp; Tools</h3><ul class="tags"><li>Capacitor</li><li>Git</li><li>REST APIs</li></ul></div>
-<div class="card"><h3>AI &amp; ML</h3><ul class="tags"><li>Python</li><li>ML Pipelines</li><li>Vector Databases</li><li>Agentic RAG</li></ul></div>
-</div>
-</section>
+        <section id="skills">
+            <h2>Skills &amp; tech stack</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Frontend</h3>
+                    <ul class="tags">
+                        <li>React</li>
+                        <li>Vite</li>
+                        <li>Tailwind CSS</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Backend &amp; Databases</h3>
+                    <ul class="tags">
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>Prisma</li>
+                        <li>PostgreSQL</li>
+                        <li>SQLite</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Mobile &amp; Tools</h3>
+                    <ul class="tags">
+                        <li>Capacitor</li>
+                        <li>Git</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>AI &amp; ML</h3>
+                    <ul class="tags">
+                        <li>Python</li>
+                        <li>ML Pipelines</li>
+                        <li>Vector Databases</li>
+                        <li>Agentic RAG</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<section id="projects">
-<h2>Featured projects</h2>
-<div class="grid">
-<article class="card proj"><h3>HealthHub</h3><p>A digital healthcare service app for finding care, booking appointments and managing health records in one place.</p><ul class="tags"><li>React</li><li>Capacitor</li><li>Node.js</li><li>PostgreSQL</li></ul><a href="https://github.com/amogh56?tab=repositories">View my GitHub</a></article>
-<article class="card proj"><h3>EventVault</h3><p>An event management platform for creating events, handling registrations and keeping attendees informed.</p><ul class="tags"><li>TypeScript</li><li>Express.js</li><li>Prisma</li><li>SQLite</li></ul><a href="https://github.com/amogh56?tab=repositories">View my GitHub</a></article>
-<article class="card proj"><h3>Personal Portfolio</h3><p>A responsive portfolio that presents my skills, projects and contact details, deployed and live on the web.</p><ul class="tags"><li>TypeScript</li><li>React</li><li>Vercel</li></ul><a href="https://amoghportfolio.vercel.app">Visit live site</a><a href="https://github.com/amogh56/portfolio">View on GitHub</a></article>
-</div>
-</section>
+        <section id="projects">
+            <h2>Featured projects</h2>
+            <div class="grid">
+                <article class="card proj">
+                    <h3>HealthHub</h3>
+                    <p>A digital healthcare service app for finding care, booking appointments and managing health
+                        records in one place.</p>
+                    <ul class="tags">
+                        <li>React</li>
+                        <li>Capacitor</li>
+                        <li>Node.js</li>
+                        <li>PostgreSQL</li>
+                    </ul><a href="https://github.com/amogh56?tab=repositories">View my GitHub</a>
+                </article>
+                <article class="card proj">
+                    <h3>EventVault</h3>
+                    <p>An event management platform for creating events, handling registrations and keeping attendees
+                        informed.</p>
+                    <ul class="tags">
+                        <li>TypeScript</li>
+                        <li>Express.js</li>
+                        <li>Prisma</li>
+                        <li>SQLite</li>
+                    </ul><a href="https://github.com/amogh56?tab=repositories">View my GitHub</a>
+                </article>
+                <article class="card proj">
+                    <h3>Personal Portfolio</h3>
+                    <p>A responsive portfolio that presents my skills, projects and contact details, deployed and live
+                        on the web.</p>
+                    <ul class="tags">
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>Vercel</li>
+                    </ul><a href="https://amoghportfolio.vercel.app">Visit live site</a><a
+                        href="https://github.com/amogh56/portfolio">View on GitHub</a>
+                </article>
+            </div>
+        </section>
 
-<section id="contact">
-<h2>Get in touch</h2>
-<div class="contact">
-<form id="contact-form">
-<input type="checkbox" name="botcheck" class="hidden" style="display:none">
-<label for="n">Name</label><input id="n" name="name" autocomplete="name" required placeholder="Your name">
-<label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-<label for="m">Message</label><textarea id="m" name="message" required placeholder="What would you like to discuss?"></textarea>
-<button class="btn primary" id="send" type="submit">Send message</button>
-<p class="note" id="status" role="status" aria-live="polite"></p>
-</form>
-<ul class="links">
-<li><span>Email</span><a href="mailto:amoghyalameli26@gmail.com">amoghyalameli26@gmail.com</a></li>
-<li><span>GitHub</span><a href="https://github.com/amogh56" target="_blank" rel="noopener noreferrer">github.com/amogh56</a></li>
-<li><span>LinkedIn</span><a href="https://www.linkedin.com/in/amogh-yalameli-b4998233b" target="_blank" rel="noopener noreferrer">linkedin.com/in/amogh-yalameli</a></li>
-</ul>
-</div>
-</section>
-</main>
-<footer>&copy; 2026 Amogh Yalameli. All rights reserved.</footer>
-<script>
-// Web3Forms Access Key: Enter your free access key here
-// (Get it free in 10 seconds at https://web3forms.com using your email amoghyalameli26@gmail.com)
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+        <section id="contact">
+            <h2>Get in touch</h2>
+            <div class="contact">
+                <form id="contact-form">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+                    <label for="n">Name</label><input id="n" name="name" autocomplete="name" required
+                        placeholder="Your name">
+                    <label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email" required
+                        placeholder="you@example.com">
+                    <label for="m">Message</label><textarea id="m" name="message" required
+                        placeholder="What would you like to discuss?"></textarea>
+                    <button class="btn primary" id="send" type="submit">Send message</button>
+                    <p class="note" id="status" role="status" aria-live="polite"></p>
+                </form>
+                <ul class="links">
+                    <li><span>Email</span><a href="mailto:amoghyalameli26@gmail.com">amoghyalameli26@gmail.com</a></li>
+                    <li><span>GitHub</span><a href="https://github.com/amogh56" target="_blank"
+                            rel="noopener noreferrer">github.com/amogh56</a></li>
+                    <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/amogh-yalameli-b4998233b"
+                            target="_blank" rel="noopener noreferrer">linkedin.com/in/amogh-yalameli</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>&copy; 2026 Amogh Yalameli. All rights reserved.</footer>
+    <script>
+        // Web3Forms Access Key: Enter your free access key here
+        // (Get it free in 10 seconds at https://web3forms.com using your email amoghyalameli26@gmail.com)
+        const WEB3FORMS_ACCESS_KEY = "2897df8f-f752-44cb-90c0-6ebe43e2d463";
 
-const form = document.getElementById("contact-form");
-const sendBtn = document.getElementById("send");
-const statusEl = document.getElementById("status");
+        const form = document.getElementById("contact-form");
+        const sendBtn = document.getElementById("send");
+        const statusEl = document.getElementById("status");
 
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
 
-  const name = document.getElementById("n").value.trim();
-  const email = document.getElementById("e").value.trim();
-  const message = document.getElementById("m").value.trim();
+            const name = document.getElementById("n").value.trim();
+            const email = document.getElementById("e").value.trim();
+            const message = document.getElementById("m").value.trim();
 
-  if (!name || !email || !message) {
-    statusEl.className = "note error";
-    statusEl.textContent = "Please fill in your name, email, and message.";
-    return;
-  }
+            if (!name || !email || !message) {
+                statusEl.className = "note error";
+                statusEl.textContent = "Please fill in your name, email, and message.";
+                return;
+            }
 
-  if (WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
-    statusEl.className = "note error";
-    statusEl.innerHTML = "⚠️ Please add your Web3Forms Access Key to the script! Get your key free in 10 seconds at <a href=\"https://web3forms.com\" target=\"_blank\" style=\"color:var(--blue);text-decoration:underline;\">web3forms.com</a>.";
-    return;
-  }
+            if (WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
+                statusEl.className = "note error";
+                statusEl.innerHTML = "⚠️ Please add your Web3Forms Access Key to the script! Get your key free in 10 seconds at <a href=\"https://web3forms.com\" target=\"_blank\" style=\"color:var(--blue);text-decoration:underline;\">web3forms.com</a>.";
+                return;
+            }
 
-  sendBtn.disabled = true;
-  const originalBtnText = sendBtn.textContent;
-  sendBtn.textContent = "Sending...";
-  statusEl.className = "note loading";
-  statusEl.textContent = "Sending your message...";
+            sendBtn.disabled = true;
+            const originalBtnText = sendBtn.textContent;
+            sendBtn.textContent = "Sending...";
+            statusEl.className = "note loading";
+            statusEl.textContent = "Sending your message...";
 
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_ACCESS_KEY,
-        name: name,
-        email: email,
-        message: message,
-        subject: `New Portfolio Message from ${name}`
-      })
-    });
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                        access_key: WEB3FORMS_ACCESS_KEY,
+                        name: name,
+                        email: email,
+                        message: message,
+                        subject: `New Portfolio Message from ${name}`
+                    })
+                });
 
-    const result = await response.json();
+                const result = await response.json();
 
-    if (result.success) {
-      statusEl.className = "note success";
-      statusEl.textContent = "✓ Message sent successfully! I will get back to you shortly.";
-      form.reset();
-    } else {
-      statusEl.className = "note error";
-      statusEl.textContent = result.message || "Failed to send message. Please try again or email directly.";
-    }
-  } catch (err) {
-    statusEl.className = "note error";
-    statusEl.textContent = "Network error occurred. Please check your connection or email directly.";
-  } finally {
-    sendBtn.disabled = false;
-    sendBtn.textContent = originalBtnText;
-  }
-});
-</script>
+                if (result.success) {
+                    statusEl.className = "note success";
+                    statusEl.textContent = "✓ Message sent successfully! I will get back to you shortly.";
+                    form.reset();
+                } else {
+                    statusEl.className = "note error";
+                    statusEl.textContent = result.message || "Failed to send message. Please try again or email directly.";
+                }
+            } catch (err) {
+                statusEl.className = "note error";
+                statusEl.textContent = "Network error occurred. Please check your connection or email directly.";
+            } finally {
+                sendBtn.disabled = false;
+                sendBtn.textContent = originalBtnText;
+            }
+        });
+    </script>
 </body>
+
 </html>
